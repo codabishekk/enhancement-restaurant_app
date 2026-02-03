@@ -31,5 +31,5 @@ Develop a restaurant page, ensuring it is user-friendly and visually appealing.
 - Host the site in Heroku / Netlify/ any hosting.
 - Submit the git URL & site URL in the Submission form.
 
-#### Submission Form:
+
 
