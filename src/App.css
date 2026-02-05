@@ -5,26 +5,26 @@
   --primary-hover: #e64a19;
   --secondary-color: #37474f; /* Slate Grey */
   --accent-color: #ff9800;
-  
+
   --bg-color: #f8f9fa;
   --card-bg: #ffffff;
   --text-primary: #263238;
   --text-secondary: #546e7a;
-  
+
   /* Fonts */
   --font-heading: 'Playfair Display', serif;
   --font-body: 'DM Sans', sans-serif;
-  
+
   /* Spacing */
   --spacing-sm: 8px;
   --spacing-md: 16px;
   --spacing-lg: 24px;
-  
+
   /* Shadows */
-  --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
-  --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
-  --shadow-lg: 0 8px 24px rgba(0,0,0,0.12);
-  
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+
   /* Radius */
   --radius-sm: 6px;
   --radius-md: 12px;
@@ -43,7 +43,12 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-heading);
   color: var(--text-primary);
 }
@@ -58,7 +63,7 @@ button {
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
 }
 
 /* Common Components */
