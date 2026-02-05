@@ -1,102 +1,173 @@
 .dish-item-container {
-  border: 1px solid gray;
-  border-radius: 12px;
-  justify-content: space-between;
+  background-color: var(--card-bg);
+  border: none;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  align-items: stretch; /* Ensure full height alignment */
+}
+
+.dish-item-container:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
 }
 
 .veg-border {
-  border: 1px solid #00923f;
-  align-self: flex-start;
+  border: 2px solid #4caf50;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 18px;
+  height: 18px;
+  padding: 2px;
+  margin-top: 6px; /* Align with text */
 }
 
 .non-veg-border {
-  border: 1px solid #92282a;
+  border-color: #f44336;
 }
 
 .veg-round {
-  height: 25px;
-  width: 25px;
+  height: 8px;
+  width: 8px;
   border-radius: 50%;
-  background-color: #00923f;
-  margin: 5px;
+  background-color: #4caf50;
+  margin: 0;
 }
 
 .non-veg-round {
-  background-color: #92282a;
+  background-color: #f44336;
 }
 
 .dish-details-container {
   flex-grow: 1;
+  padding-right: 16px;
 }
 
 .dish-name {
-  font-weight: 600;
-  font-family: 'Roboto';
-  font-size: 25px;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
   margin-top: 0;
+  margin-bottom: 4px;
+  color: var(--text-primary);
+  line-height: 1.2;
 }
 
-.dish-current-price {
-  color: #525252;
-  font-weight: 600;
-  font-family: 'Roboto';
-  font-size: 16px;
-  margin-top: 0;
-  margin-bottom: 0;
+.dish-currency-price {
+  color: var(--text-primary);
+  font-weight: 700;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  margin: 4px 0;
 }
+
 .dish-description {
-  color: #bfc3c7;
-  font-weight: 500;
-  font-family: 'Roboto';
-  font-size: 16px;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  color: var(--text-secondary);
+  font-weight: 400;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  margin: 8px 0 16px 0;
+  line-height: 1.5;
 }
 
+/* Controller Styles */
 .controller-container {
   width: fit-content;
-  min-width: 150px;
+  min-width: 100px;
   justify-content: space-between;
-  padding: 10px;
+  padding: 4px 12px;
   border-radius: 50px;
+  background-color: var(--primary-color) !important; /* Override bootstrap bg-success */
+  box-shadow: var(--shadow-sm);
 }
 
 .button {
-  padding: 5px;
+  padding: 0;
   background-color: transparent;
   border: none;
   outline: none;
   cursor: pointer;
   color: #ffffff;
-  font-weight: 600;
-  font-size: 18px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  line-height: 1;
 }
 
 .quantity {
-  margin: 0 10px;
+  margin: 0 12px;
   color: #ffffff;
-  font-size: 18px;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1rem;
 }
 
 .not-availability-text {
-  font-weight: 500px;
-  font-size: 18px;
+  font-weight: 500;
+  font-size: 0.9rem;
   margin: 5px 0;
-  color: #734ff4;
+  color: #f44336;
 }
 
 .dish-image {
-  width: 150px;
-  height: 150px;
-  border-radius: 12px;
-  align-self: flex-start;
+  width: 140px;
+  height: 140px;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+  align-self: center;
+  box-shadow: var(--shadow-sm);
 }
 
 .dish-calories {
-  min-width: 150px;
-  max-width: 250px;
-  font-weight: 500;
-  font-family: 'Roboto';
-  font-size: 18px;
+  min-width: 150px; /* Keep layout consistent */
+  font-weight: 600;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
   align-self: center;
+  text-align: right;
+  padding-right: 16px;
+  color: var(--accent-color) !important; /* Override text-warning if needed, or matched */
+  margin: 0;
+}
+
+.addon-availability-text {
+  color: var(--primary-color);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  margin-top: 8px;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 768px) {
+  .dish-item-container {
+    flex-direction: column;
+    position: relative;
+  }
+  
+  .dish-image {
+    width: 100%;
+    height: 200px;
+    margin-top: 16px;
+    order: -1; /* Image on top on mobile? Or maybe keep it bottom? Let's leave normal flow but fix width */
+    order: 0; 
+  }
+
+  .dish-calories {
+    text-align: left;
+    margin-top: 8px;
+    min-width: auto;
+  }
+}
+
+/* Specific fix for mobile image order if desired, but default column logic applies */
+@media screen and (max-width: 576px) {
+  .dish-image {
+    width: 100%;
+    height: 180px;
+    margin-bottom: 16px;
+  }
+  .dish-item-container {
+    padding: 16px !important;
+  }
 }

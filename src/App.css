@@ -1,35 +1,91 @@
+/* Global CSS Variables & Reset */
+:root {
+  /* Colors */
+  --primary-color: #ff5722; /* Deep Orange */
+  --primary-hover: #e64a19;
+  --secondary-color: #37474f; /* Slate Grey */
+  --accent-color: #ff9800;
+  
+  --bg-color: #f8f9fa;
+  --card-bg: #ffffff;
+  --text-primary: #263238;
+  --text-secondary: #546e7a;
+  
+  /* Fonts */
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'DM Sans', sans-serif;
+  
+  /* Spacing */
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  
+  /* Shadows */
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+  --shadow-lg: 0 8px 24px rgba(0,0,0,0.12);
+  
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--text-primary);
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+}
+
 .app {
-  background: white;
-  height: 100vh;
-  min-width: max-content;
-  display: grid;
-  place-items: center;
-}
-
-.app-body {
+  background: var(--bg-color);
+  min-height: 100vh;
   display: flex;
-  height: 90vh;
-  width: 90vw;
-  min-width: 502px;
-  background: white;
-  box-shadow: -1px 4px 20px -6xp rgba(0, 0, 0.5);
+  justify-content: center;
+  align-items: center; 
 }
 
+/* Common Components */
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+/* Empty View */
 .empty-container {
-  flex: 0.65;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: var(--spacing-lg);
+  text-align: center;
 }
+
 .empty-container .lottie {
-  height: 300px;
-  width: 300px;
+  max-width: 300px;
+  margin-bottom: var(--spacing-md);
 }
+
 .empty-container p {
-  font-family: 'Roboto';
-  font-weight: 600;
-  font-size: 25px;
-  letter-spacing: 1px;
-  color: rgb(60, 169, 60);
+  font-size: 1.5rem;
+  color: var(--text-secondary);
+  font-weight: 500;
 }

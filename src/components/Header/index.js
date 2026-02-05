@@ -25,7 +25,9 @@ const Header = props => {
         </button>
       </Link>
       <div className="cart-count-badge d-flex justify-content-center align-items-center">
-        <p className="m-0 cart-count">{cartList.length}</p>
+        <p className="m-0 cart-count">
+          {cartList.reduce((acc, item) => acc + item.quantity, 0)}
+        </p>
       </div>
     </div>
   )

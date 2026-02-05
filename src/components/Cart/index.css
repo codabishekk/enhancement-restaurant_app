@@ -1,56 +1,84 @@
 .cart-page-container {
   min-height: 100vh;
+  background-color: var(--bg-color);
+  display: flex;
+  flex-direction: column;
 }
 
 .cart-body-container {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px;
 }
 
-.shop-now-btn {
-  background-color: #0b69ff;
-  color: #ffffff;
-  font-family: 'Roboto';
-  font-size: 12px;
-  border-radius: 8px;
-  border: none;
-  padding-left: 16px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-right: 16px;
+.cart-items-header {
+  padding: 24px 0;
+  width: 100%;
+  max-width: 1050px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-items-header h1 {
+  font-size: 2rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.remove-all-btn {
+  font-size: 0.9rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  padding: 8px 16px;
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: var(--radius-sm);
   outline: none;
   cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.remove-all-btn:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+/* Reusing shop-now-btn for EmptyView likely to be imported here if shared */
+.shop-now-btn {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: var(--radius-sm);
+  border: none;
+  padding: 12px 24px;
+  outline: none;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.shop-now-btn:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
 }
 
 .empty-view-image {
   width: 80%;
-  max-width: 450px;
-  margin-bottom: 25px;
+  max-width: 400px;
+  margin-bottom: 32px;
 }
 
 .empty-description {
-  font-size: 18px;
+  font-size: 1.5rem;
   font-weight: 500;
-  font-family: 'Roboto';
-}
-
-.cart-items-header {
-  padding: 25px 0;
-  width: 80%;
-  margin: 0 auto;
-}
-
-.cart-items-header h1 {
-  font-size: 25px;
-  font-family: 'Roboto';
-  font-weight: 500;
-}
-
-.remove-all-btn {
-  font-size: 14px;
-  font-family: 'Roboto';
-  font-weight: 500;
-  padding: 8px 16px;
-  background-color: transparent;
-  border: none;
-  outline: none;
+  font-family: var(--font-heading);
+  color: var(--text-secondary);
+  margin-bottom: 24px;
 }

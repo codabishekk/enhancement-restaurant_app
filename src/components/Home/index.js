@@ -53,10 +53,6 @@ const Home = () => {
   const onUpdateActiveCategoryIdx = menuCategoryId =>
     setActiveCategoryId(menuCategoryId)
 
-  const addItemToCart = () => {}
-
-  const removeItemFromCart = () => {}
-
   const renderTabMenuList = () =>
     response.map(eachCategory => {
       const onClickHandler = () =>
@@ -90,12 +86,7 @@ const Home = () => {
     return (
       <ul className="m-0 d-flex flex-column dishes-list-container">
         {categoryDishes.map(eachDish => (
-          <DishItem
-            key={eachDish.dishId}
-            dishDetails={eachDish}
-            addItemToCart={addItemToCart}
-            removeItemFromCart={removeItemFromCart}
-          />
+          <DishItem key={eachDish.dishId} dishDetails={eachDish} />
         ))}
       </ul>
     )
