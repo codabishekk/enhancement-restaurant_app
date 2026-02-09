@@ -18,12 +18,9 @@ const DishItem = ({dishDetails}) => {
     dishId,
   } = dishDetails
 
-  const {
-    cartList,
-    addCartItem,
-    removeCartItem,
-    decrementCartItemQuantity,
-  } = useContext(CartContext)
+  const {cartList, addCartItem, decrementCartItemQuantity} = useContext(
+    CartContext,
+  )
 
   const cartItem = cartList.find(eachCartItem => eachCartItem.dishId === dishId)
   const quantity = cartItem ? cartItem.quantity : 0
